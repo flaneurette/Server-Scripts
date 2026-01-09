@@ -28,7 +28,7 @@ PORTS_TCP=(22 80 443 143 465 587 993 8080 8443)
 PORTS_UDP=(8080 8443)
 
 # Install netfilter-persistent (removes UFW!)
-sudo apt update
+# sudo apt update
 sudo apt install netfilter-persistent
 
 # Delete old rules
