@@ -1,7 +1,11 @@
 # Server-Scripts
 Collection of useful server bash scripts
 
-Upload to linux server.
+Upload to linux server:
+
+`/root/`
+or:
+`/usr/local/bin/`
 
 ### Usage
 
