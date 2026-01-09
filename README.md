@@ -14,3 +14,8 @@ or:
 Run it:
 
 `sudo ./script.sh`
+
+
+### .my.cnf
+
+Edit `.my.cnf` and copy to `/root/` or `user folder`. Required if you want MySQL to read credentials for making backups. (safer)
