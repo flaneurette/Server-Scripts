@@ -1,2 +1,0 @@
-Test GPG signing with secret key
-Test GPG signing with secret key
