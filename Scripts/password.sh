@@ -1,11 +1,11 @@
 #!/bin/bash
 
-echo "Welcome to the Password Generator!"
+echo "Secure Password Generator"
 
 # Ask for length
 read -p "Enter password length: " length
 
-# Ask for type
+# Ask for character set
 echo "Choose character set:"
 echo "1) Letters only"
 echo "2) Letters + Numbers"
@@ -15,27 +15,40 @@ read -p "Enter choice (1-3): " choice
 # Ask for optional hashing
 echo "Optional: hash password?"
 echo "1) None"
-echo "2) MD5"
-echo "3) SHA256"
+echo "2) SHA256"
+echo "3) SHA512"
 read -p "Enter choice (1-3): " hash_choice
 
-# Determine charset
+# Define charset
 case $choice in
   1) charset='A-Za-z' ;;
   2) charset='A-Za-z0-9' ;;
-  3) charset='A-Za-z0-9!@#$%^&*()_+-=~' ;;
+  3) charset='A-Za-z0-9!@#$%^&*()_+~;:?<>=-' ;;
   *) echo "Invalid choice, defaulting to Letters + Numbers"; charset='A-Za-z0-9' ;;
 esac
 
-# Generate password
-password=$(tr -dc "$charset" < /dev/urandom | head -c $length)
+# Function to generate password securely
+generate_password() {
+    tr -dc "$charset" < /dev/urandom | head -c "$length"
+}
 
-# Apply hash if requested
+# Output password directly or hashed
 case $hash_choice in
-  1) final_password="$password" ;;
-  2) final_password=$(echo -n "$password" | md5sum | awk '{print $1}') ;;
-  3) final_password=$(echo -n "$password" | sha256sum | awk '{print $1}') ;;
-  *) final_password="$password" ;;
+  1)
+    echo "Generated Password:"
+    generate_password
+    ;;
+  2)
+    echo "Generated SHA256 Hash:"
+    generate_password | sha256sum | awk '{print $1}'
+    ;;
+  3)
+    echo "Generated SHA512 Hash:"
+    generate_password | sha512sum | awk '{print $1}'
+    ;;
+  *)
+    echo "Generated Password:"
+    generate_password
+    ;;
 esac
-
-echo "Generated Password: $final_password"
+echo
