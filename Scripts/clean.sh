@@ -15,6 +15,9 @@ echo "=== Cleaning package cache and autoremove ==="
 sudo apt clean
 sudo apt autoremove -y
 
+echo "=== Cleaning old .gz archives older than 2 months ==="
+sudo find /var/log -type f -name "*.gz" -mtime +60 -delete
+
 echo "=== Cleaning tmp files older than 7 days ==="
 sudo find /tmp -type f -atime +7 -delete
 sudo find /var/tmp -type f -atime +7 -delete
