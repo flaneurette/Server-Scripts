@@ -31,13 +31,14 @@ PORTS_UDP=(8080 8443)
 # Drop to WAN
 PORTS_TCPDROP=(22 143 465 587 993 995 8080 8443)
 
+# Backup
+sudo iptables-save > /etc/iptables/rules.v4.bak
+
 # If you have tailscale:
 sudo iptables -A INPUT -i tailscale0 -p tcp --dport 22 -j ACCEPT
 
-# If you have mailserver:
+# If you have a mailserver:
 sudo iptables -A INPUT  -p tcp --dport 25 -j ACCEPT
-
-sudo iptables-save > /etc/iptables/rules.v4
 
 # Delete old rules
 for p in "${PORTS_TCP[@]}"; do
@@ -70,8 +71,6 @@ done
 for p in "${PORTS_UDP[@]}"; do
   sudo iptables -A INPUT -p udp --dport $p -j DROP
 done
-
-
 
 iptables-save > /etc/iptables/rules.v4
 
