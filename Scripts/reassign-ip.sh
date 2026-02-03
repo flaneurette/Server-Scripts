@@ -27,7 +27,7 @@ SERVER_IP="5.4.3.2.1"
 # Ports the NEW IP is allowed to connect to:
 PORTS_TCP=(22 80 443 110 143 465 587 993 995 8080 8443)
 PORTS_UDP=(8080 8443)
-# Drop to WAN
+# Drop for WAN
 PORTS_TCPDROP=(22 110 143 465 587 993 995 8080 8443)
 
 # Backup
