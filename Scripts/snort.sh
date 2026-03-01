@@ -1,6 +1,6 @@
 #!/bin/bash
 # Snort alert monitor
-# Usage: ./snort-watch.sh [filter]
+# Usage: ./snort.sh [filter]
 
 LOGFILE=$(ls -t /var/log/snort/snort.alert.fast 2>/dev/null | head -1)
 
