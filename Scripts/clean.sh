@@ -33,7 +33,7 @@ echo -e "${RED}=================================================================
 echo -e "${RED}    The script also cleared your BASH cache. However:                ${NC}"
 echo -e "${RED}    REMEMBER to manually type: history -c                            ${NC}"
 echo -e "${RED}    DO THIS NOW in every open terminal!                              ${NC}"
-echo -e "${RED}    This prevents from sensitive data living in memory               ${NC}"
+echo -e "${RED}    This prevents sensitive data from living in memory               ${NC}"
 echo -e "${RED}    To prevent this: use a LEADING SPACE before a sensitive command  ${NC}"
 echo -e "${RED}=====================================================================${NC}"
 
