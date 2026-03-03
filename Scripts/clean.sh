@@ -53,5 +53,5 @@ for f in ~/.bash_history-*.tmp; do > "$f"; done
 # Clearing Wget
 > ~/.wget-hsts
 > ~/wget-log
-for f in ~/wget-log.* 2>/dev/null; do [ -f "$f" ] && > "$f"; done
+for f in ~/wget-log.*; do > "$f"; done
 
