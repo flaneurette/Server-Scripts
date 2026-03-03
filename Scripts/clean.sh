@@ -29,10 +29,13 @@ echo "=== Done! ==="
 
 RED='\033[0;31m'
 NC='\033[0m' # No Color
-echo -e "${RED}======================================================${NC}"
-echo -e "${RED}    REMEMBER to manually type: history -c${NC}"
-echo -e "${RED}    DO THIS NOW in every open terminal!${NC}"
-echo -e "${RED}======================================================${NC}"
+echo -e "${RED}=====================================================================${NC}"
+echo -e "${RED}    The script also cleared your BASH cache. However:                ${NC}"
+echo -e "${RED}    REMEMBER to manually type: history -c                            ${NC}"
+echo -e "${RED}    DO THIS NOW in every open terminal!                              ${NC}"
+echo -e "${RED}    This prevents from sensitive data living in memory               ${NC}"
+echo -e "${RED}    To prevent this: use a LEADING SPACE before a sensitive command  ${NC}"
+echo -e "${RED}=====================================================================${NC}"
 
 # Cleaning BASH history
 > ~/.bash_history
