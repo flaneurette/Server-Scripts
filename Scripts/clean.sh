@@ -47,3 +47,11 @@ for f in ~/.bash_history-*.tmp; do > "$f"; done
 # Clearing MySQL
 > ~/.mysql_history
 
+# Clear Python REPL history
+> ~/.python_history
+
+# Clearing Wget
+> ~/.wget-hsts
+> ~/wget-log
+for f in ~/wget-log.*; do > "$f"; done
+
