@@ -26,3 +26,12 @@ echo "=== Disk usage after cleanup ==="
 df -h /
 
 echo "=== Done! ==="
+echo "----------------------------------------------------------"
+echo "REMEMBER to manually type: history -c"
+echo "----------------------------------------------------------"
+echo "You must do this to prevent bash history living in memory!"
+
+# Cleaning BASH history
+> ~/.bash_history
+for f in ~/.bash_history-*.tmp; do > "$f"; done
+
