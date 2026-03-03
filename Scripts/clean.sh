@@ -26,10 +26,13 @@ echo "=== Disk usage after cleanup ==="
 df -h /
 
 echo "=== Done! ==="
-echo "----------------------------------------------------------"
-echo "REMEMBER to manually type: history -c"
-echo "----------------------------------------------------------"
-echo "You must do this to prevent bash history living in memory!"
+
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+echo -e "${RED}======================================================${NC}"
+echo -e "${RED}    REMEMBER to manually type: history -c${NC}"
+echo -e "${RED}    DO THIS NOW in every open terminal!${NC}"
+echo -e "${RED}======================================================${NC}"
 
 # Cleaning BASH history
 > ~/.bash_history
