@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+shopt -s nullglob
 
 read -p "How much MB to clean from journal logs? (default 500) " MBY
 MBY=${MBY:-500}
