@@ -41,3 +41,9 @@ echo -e "${RED}=================================================================
 > ~/.bash_history
 for f in ~/.bash_history-*.tmp; do > "$f"; done
 
+# Clearing less
+> ~/.lesshst
+
+# Clearing MySQL
+> ~/.mysql_history
+
