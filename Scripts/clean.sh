@@ -29,10 +29,13 @@ sudo truncate -s 0  /var/log/mail.log
 
 echo "=== Deep clean... ==="
 
-sudo truncate -s 0 /var/log/auth.log
+# Shred sensitive files.
+shred -u /var/log/auth.log
+touch /var/log/auth.log
+
 sudo truncate -s 0 /var/log/syslog
 sudo truncate -s 0 /var/log/kern.log
-sudo truncate -s 0 /var/log/dpkg.log       # Debian/Ubuntu
+sudo truncate -s 0 /var/log/dpkg.log         # Debian/Ubuntu
 sudo truncate -s 0 /var/log/apt/history.log
 # sudo truncate -s 0 /var/log/messages       # RHEL/CentOS
 # sudo truncate -s 0 /var/log/secure         # RHEL/CentOS
@@ -49,6 +52,11 @@ echo -e "${RED}    DO THIS NOW in every open terminal!${NC}"
 echo -e "${RED}    This prevents from sensitive data living in memory               ${NC}"
 echo -e "${RED}    To prevent this: use a LEADING SPACE before a sensitive command  ${NC}"
 echo -e "${RED}=====================================================================${NC}"
+
+# Shred it first.
+shred -u ~/.bash_history
+touch ~/.bash_history
+
 # Cleaning BASH history and memory.
 truncate -s 0 ~/.bash_history
 # Clearing less
