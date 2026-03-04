@@ -9,7 +9,7 @@ set -e
 shopt -s nullglob
 
 # If you have fail2ban, might want to make extra backup. (do the same for snort, if applicable)
-# sudo fail2ban-client status sshd > /var/log/fail2ban_review_$(date +%Y%m%d).log
+# sudo fail2ban-client status sshd > /var/log/fail2ban_review_sshd_$(date +%Y%m%d).log
 # sudo fail2ban-client banned >> /var/log/fail2ban_review_banned_$(date +%Y%m%d).log
 
 echo "=== Disk usage before cleanup ==="
