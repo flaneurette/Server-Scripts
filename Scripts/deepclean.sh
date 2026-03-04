@@ -18,7 +18,7 @@ shopt -s nullglob
 # -----------------
 # Uncomment if you want to encrypt all log files, and store it as GPG file:
 # === Archive and encrypt logs before clearing ===
-# DATE=$(date +%Y%m%d)
+# DATE=$(date +%m)
 # ARCHIVE=~/logs_backup_$DATE.tar.gz
 # ENCRYPTED=$ARCHIVE.gpg
 # sudo tar -czf $ARCHIVE /var/log 2>/dev/null
