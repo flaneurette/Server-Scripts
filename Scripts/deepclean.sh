@@ -1,5 +1,7 @@
 #!/bin/bash
 # deepclean.sh once a week, Friday at 2:30am (choose different day and time, otherwise everyone knows you run it at that time!
+# Or once a month, depending on how active you are as sysadmin. 
+# Note: this script also clears trails potential attackers/bots might leave behind. So monitor daily!
 # crontab -e
 # 30 2 * * 5 /bin/bash /home/scripts/deepclean.sh
 
