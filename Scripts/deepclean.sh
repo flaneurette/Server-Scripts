@@ -8,9 +8,23 @@
 set -e
 shopt -s nullglob
 
+# Fail2ban
+# --------
 # If you have fail2ban, might want to make extra backup. (do the same for snort, if applicable)
 # sudo fail2ban-client status sshd > /var/log/fail2ban_review_sshd_$(date +%Y%m%d).log
 # sudo fail2ban-client banned >> /var/log/fail2ban_review_banned_$(date +%Y%m%d).log
+
+# Encrypted backup
+# -----------------
+# Uncomment if you want to encrypt all log files, and store it as GPG file:
+# === Archive and encrypt logs before clearing ===
+# DATE=$(date +%Y%m%d)
+# ARCHIVE=~/logs_backup_$DATE.tar.gz
+# ENCRYPTED=$ARCHIVE.gpg
+# sudo tar -czf $ARCHIVE /var/log 2>/dev/null
+# gpg --recipient yourkey@email.com --encrypt $ARCHIVE
+# shred -u $ARCHIVE
+# echo "=== Encrypted log archive saved: $ENCRYPTED ==="
 
 echo "=== Disk usage before cleanup ==="
 df -h /
