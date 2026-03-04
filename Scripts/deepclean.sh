@@ -1,4 +1,7 @@
 #!/bin/bash
+# deepclean.sh once a week, Friday at 2:30am (choose different day and time, otherwise everyone knows you run it at that time!
+# crontab -e
+# 30 2 * * 5 /bin/bash ~/scripts/deepclean.sh
 
 set -e
 shopt -s nullglob
